@@ -1,0 +1,11 @@
+CACHE MANIFEST
+# v.1
+
+index.html
+css/style.css
+js/scripts.js
+img/image1.jpg
+
+NETWORK:
+*
+

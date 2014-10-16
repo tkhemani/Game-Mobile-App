@@ -1,0 +1,10 @@
+CACHE MANIFEST
+# v.1.2
+
+index.html
+javascripts/main.js
+javascripts/offsite.js
+
+NETWORK:
+*
+

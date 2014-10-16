@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html manifest="site.appcache">
+
+<head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Offsite 2013 : " />
+
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css"> -->
+    <style>
+        /*******************************************************************************
+        Slate Theme for GitHub Pages
+        by Jason Costello, @jsncostello
+        *******************************************************************************/
+
+        /*@import url(pygment_trac.css);*/
+
+        /*******************************************************************************
+        MeyerWeb Reset
+        *******************************************************************************/
+
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed,
+        figure, figcaption, footer, header, hgroup,
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video
+        {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        /* HTML5 display-role reset for older browsers */
+        article, aside, details, figcaption, figure,
+        footer, header, hgroup, menu, nav, section
+        {
+            display: block;
+        }
+
+        ol, ul
+        {
+            list-style: none;
+        }
+
+        table
+        {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        /*******************************************************************************
+        Theme Styles
+        *******************************************************************************/
+
+        body
+        {
+            box-sizing: border-box;
+            color: #373737;
+            background: #212121;
+            font-size: 16px;
+            font-family: 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, h5, h6
+        {
+            margin: 10px 0;
+            font-weight: 700;
+            color: #222222;
+            font-family: 'Lucida Grande', 'Calibri', Helvetica, Arial, sans-serif;
+            letter-spacing: -1px;
+        }
+
+        h1
+        {
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        h2
+        {
+            padding-bottom: 10px;
+            font-size: 32px;
+            background: url('../images/bg_hr.png') repeat-x bottom;
+        }
+
+        h3
+        {
+            font-size: 24px;
+        }
+
+        h4
+        {
+            font-size: 21px;
+        }
+
+        h5
+        {
+            font-size: 18px;
+        }
+
+        h6
+        {
+            font-size: 16px;
+        }
+
+        p
+        {
+            margin: 10px 0 15px 0;
+        }
+
+        footer p
+        {
+            color: #f2f2f2;
+        }
+
+        a
+        {
+            text-decoration: none;
+            color: #007edf;
+            text-shadow: none;
+            transition: color 0.5s ease;
+            transition: text-shadow 0.5s ease;
+            -webkit-transition: color 0.5s ease;
+            -webkit-transition: text-shadow 0.5s ease;
+            -moz-transition: color 0.5s ease;
+            -moz-transition: text-shadow 0.5s ease;
+            -o-transition: color 0.5s ease;
+            -o-transition: text-shadow 0.5s ease;
+            -ms-transition: color 0.5s ease;
+            -ms-transition: text-shadow 0.5s ease;
+        }
+
+            a:hover, a:focus
+            {
+                text-decoration: underline;
+            }
+
+        footer a
+        {
+            color: #F2F2F2;
+            text-decoration: underline;
+        }
+
+        em
+        {
+            font-style: italic;
+        }
+
+        strong
+        {
+            font-weight: bold;
+        }
+
+        img
+        {
+            position: relative;
+            margin: 0 auto;
+            max-width: 739px;
+            padding: 5px;
+            margin: 10px 0 10px 0;
+            border: 1px solid #ebebeb;
+            box-shadow: 0 0 5px #ebebeb;
+            -webkit-box-shadow: 0 0 5px #ebebeb;
+            -moz-box-shadow: 0 0 5px #ebebeb;
+            -o-box-shadow: 0 0 5px #ebebeb;
+            -ms-box-shadow: 0 0 5px #ebebeb;
+        }
+
+        p img
+        {
+            display: inline;
+            margin: 0;
+            padding: 0;
+            vertical-align: middle;
+            text-align: center;
+            border: none;
+        }
+
+        pre, code
+        {
+            width: 100%;
+            color: #222;
+            background-color: #fff;
+            font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+            font-size: 14px;
+            border-radius: 2px;
+            -moz-border-radius: 2px;
+            -webkit-border-radius: 2px;
+        }
+
+        pre
+        {
+            width: 100%;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,.1);
+            overflow: auto;
+        }
+
+        code
+        {
+            padding: 3px;
+            margin: 0 3px;
+            box-shadow: 0 0 10px rgba(0,0,0,.1);
+        }
+
+        pre code
+        {
+            display: block;
+            box-shadow: none;
+        }
+
+        blockquote
+        {
+            color: #666;
+            margin-bottom: 20px;
+            padding: 0 0 0 20px;
+            border-left: 3px solid #bbb;
+        }
+
+
+        ul, ol, dl
+        {
+            margin-bottom: 15px;
+        }
+
+        ul
+        {
+            list-style: inside;
+            padding-left: 20px;
+        }
+
+        ol
+        {
+            list-style: decimal inside;
+            padding-left: 20px;
+        }
+
+        dl dt
+        {
+            font-weight: bold;
+        }
+
+        dl dd
+        {
+            padding-left: 20px;
+            font-style: italic;
+        }
+
+        dl p
+        {
+            padding-left: 20px;
+            font-style: italic;
+        }
+
+        hr
+        {
+            height: 1px;
+            margin-bottom: 5px;
+            border: none;
+            background: url('../images/bg_hr.png') repeat-x center;
+        }
+
+        table
+        {
+            border: 1px solid #373737;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        th
+        {
+            font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            padding: 10px;
+            background: #373737;
+            color: #fff;
+        }
+
+        td
+        {
+            padding: 10px;
+            border: 1px solid #373737;
+        }
+
+        form
+        {
+            background: #f2f2f2;
+            padding: 20px;
+        }
+
+        /*******************************************************************************
+        Full-Width Styles
+        *******************************************************************************/
+
+        .outer
+        {
+            width: 100%;
+        }
+
+        .inner
+        {
+            position: relative;
+            max-width: 640px;
+            padding: 20px 10px;
+            margin: 0 auto;
+        }
+
+        #forkme_banner
+        {
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 10px;
+            z-index: 10;
+            padding: 10px 50px 10px 10px;
+            color: #fff;
+            background: url('../images/blacktocat.png') #0090ff no-repeat 95% 50%;
+            font-weight: 700;
+            box-shadow: 0 0 10px rgba(0,0,0,.5);
+            border-bottom-left-radius: 2px;
+            border-bottom-right-radius: 2px;
+        }
+
+        #header_wrap
+        {
+            background: #212121;
+            background: -moz-linear-gradient(top, #373737, #212121);
+            background: -webkit-linear-gradient(top, #373737, #212121);
+            background: -ms-linear-gradient(top, #373737, #212121);
+            background: -o-linear-gradient(top, #373737, #212121);
+            background: linear-gradient(top, #373737, #212121);
+        }
+
+            #header_wrap .inner
+            {
+                padding: 50px 10px 30px 10px;
+            }
+
+        #project_title
+        {
+            margin: 0;
+            color: #fff;
+            font-size: 42px;
+            font-weight: 700;
+            text-shadow: #111 0px 0px 10px;
+        }
+
+        #project_tagline
+        {
+            color: #fff;
+            font-size: 24px;
+            font-weight: 300;
+            background: none;
+            text-shadow: #111 0px 0px 10px;
+        }
+
+        #downloads
+        {
+            position: absolute;
+            width: 210px;
+            z-index: 10;
+            bottom: -40px;
+            right: 0;
+            height: 70px;
+            background: url('../images/icon_download.png') no-repeat 0% 90%;
+        }
+
+        .zip_download_link
+        {
+            display: block;
+            float: right;
+            width: 90px;
+            height: 70px;
+            text-indent: -5000px;
+            overflow: hidden;
+            background: url(../images/sprite_download.png) no-repeat bottom left;
+        }
+
+        .tar_download_link
+        {
+            display: block;
+            float: right;
+            width: 90px;
+            height: 70px;
+            text-indent: -5000px;
+            overflow: hidden;
+            background: url(../images/sprite_download.png) no-repeat bottom right;
+            margin-left: 10px;
+        }
+
+        .zip_download_link:hover
+        {
+            background: url(../images/sprite_download.png) no-repeat top left;
+        }
+
+        .tar_download_link:hover
+        {
+            background: url(../images/sprite_download.png) no-repeat top right;
+        }
+
+        #main_content_wrap
+        {
+            background: #f2f2f2;
+            border-top: 1px solid #111;
+            border-bottom: 1px solid #111;
+        }
+
+        #main_content
+        {
+            padding-top: 40px;
+        }
+
+        #footer_wrap
+        {
+            background: #212121;
+        }
+
+
+
+        /*******************************************************************************
+        Small Device Styles
+        *******************************************************************************/
+
+        @media screen and (max-width: 480px)
+        {
+            body
+            {
+                font-size: 14px;
+            }
+
+            #downloads
+            {
+                display: none;
+            }
+
+            .inner
+            {
+                min-width: 320px;
+                max-width: 480px;
+            }
+
+            #project_title
+            {
+                font-size: 32px;
+            }
+
+            h1
+            {
+                font-size: 28px;
+            }
+
+            h2
+            {
+                font-size: 24px;
+            }
+
+            h3
+            {
+                font-size: 21px;
+            }
+
+            h4
+            {
+                font-size: 18px;
+            }
+
+            h5
+            {
+                font-size: 14px;
+            }
+
+            h6
+            {
+                font-size: 12px;
+            }
+
+            code, pre
+            {
+                min-width: 320px;
+                max-width: 480px;
+                font-size: 11px;
+            }
+        }
+    </style>
+
+    <script src="javascripts/offsite.js"></script>
+    <script src="javascripts/main.js"></script>
+    <title>Offsite 2013</title>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+            <!-- <a id="forkme_banner" href="https://github.com/josephaanthony">View on GitHub</a> -->
+
+            <h1 id="project_title">Offsite 2013</h1>
+            <h2 id="project_tagline"></h2>
+
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+        <section id="main_content" class="inner">
+            <h3>
+                <a name="welcome-to-offsite-2013" class="anchor" href="#welcome-to-offsite-2013"><span class="octicon octicon-link"></span></a>Welcome to Offsite 2013.</h3>
+
+            <p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+        </section>
+    </div>
+
+
+    <div class="control-group">
+        <label class="control-label" for="password">Password</label>
+        <div class="controls">
+            <input id="password" type="password"/>
+        </div>
+    </div>
+    
+    <div class="control-group">
+        <label class="control-label" for="text" id="text-label">Text</label>
+        <div class="controls">
+            <input id="text" type="text"/>
+        </div>
+    </div>
+    
+    <div class="control-group">
+        <label class="control-label" for="encrypt" id="encrypt-label">Encrypt</label>
+        <div class="controls">
+            <input id="encrypt" type="text"/>
+        </div>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+        <footer class="inner">
+            <p></p>
+        </footer>
+    </div>
+
+
+
+    <script>
+
+        var password = $('#password'),
+        text = $('#text'),
+        enc = $('#encrypt')
+        , encrypt = function () {
+            enc.val(Tea.encrypt(text.val(), password.val()))
+        }, decrypt = function () {
+            text.val(Tea.decrypt(enc.val(), password.val()))
+        };
+        $('#text-label').click(decrypt)
+        $('#encrypt-label').click(encrypt)
+        text.on('blur', encrypt)
+        enc.on('blur', decrypt);
+
+        var Tea = new function () // Tea namespace
+        {
+            /*
+             * encrypt text using Corrected Block TEA (xxtea) algorithm
+             *
+             * @param {string} plaintext String to be encrypted (multi-byte safe)
+             * @param {string} password  Password to be used for encryption (1st 16 chars)
+             * @returns {string} encrypted text
+             */
+            this.encrypt = function (plaintext, password) {
+                if (plaintext.length == 0) return (''); // nothing to encrypt
+                // convert string to array of longs after converting any multi-byte chars to UTF-8
+                var v = Tea.strToLongs(Utf8.encode(plaintext));
+                if (v.length <= 1) v[1] = 0; // algorithm doesn't work for n<2 so fudge by adding a null
+                // simply convert first 16 chars of password as key
+                var k = Tea.strToLongs(Utf8.encode(password).slice(0, 16));
+                var n = v.length;
+
+                // ---- <TEA coding> ---- 
+                var z = v[n - 1],
+                    y = v[0],
+                    delta = 0x9E3779B9;
+                var mx, e, q = Math.floor(6 + 52 / n),
+                    sum = 0;
+
+                while (q-- > 0) { // 6 + 52/n operations gives between 6 & 32 mixes on each word
+                    sum += delta;
+                    e = sum >>> 2 & 3;
+                    for (var p = 0; p < n; p++) {
+                        y = v[(p + 1) % n];
+                        mx = (z >>> 5 ^ y << 2) + (y >>> 3 ^ z << 4) ^ (sum ^ y) + (k[p & 3 ^ e] ^ z);
+                        z = v[p] += mx;
+                    }
+                }
+
+                // ---- </TEA> ----
+                var ciphertext = Tea.longsToStr(v);
+
+                return Base64.encode(ciphertext);
+            }
+
+            /*
+             * decrypt text using Corrected Block TEA (xxtea) algorithm
+             *
+             * @param {string} ciphertext String to be decrypted
+             * @param {string} password   Password to be used for decryption (1st 16 chars)
+             * @returns {string} decrypted text
+             */
+            this.decrypt = function (ciphertext, password) {
+                if (ciphertext.length == 0) return ('');
+                var v = Tea.strToLongs(Base64.decode(ciphertext));
+                var k = Tea.strToLongs(Utf8.encode(password).slice(0, 16));
+                var n = v.length;
+
+                // ---- <TEA decoding> ---- 
+                var z = v[n - 1],
+                    y = v[0],
+                    delta = 0x9E3779B9;
+                var mx, e, q = Math.floor(6 + 52 / n),
+                    sum = q * delta;
+
+                while (sum != 0) {
+                    e = sum >>> 2 & 3;
+                    for (var p = n - 1; p >= 0; p--) {
+                        z = v[p > 0 ? p - 1 : n - 1];
+                        mx = (z >>> 5 ^ y << 2) + (y >>> 3 ^ z << 4) ^ (sum ^ y) + (k[p & 3 ^ e] ^ z);
+                        y = v[p] -= mx;
+                    }
+                    sum -= delta;
+                }
+
+                // ---- </TEA> ---- 
+                var plaintext = Tea.longsToStr(v);
+
+                // strip trailing null chars resulting from filling 4-char blocks:
+                plaintext = plaintext.replace(/\0+$/, '');
+
+                return Utf8.decode(plaintext);
+            }
+
+            /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+
+            // supporting functions
+            this.strToLongs = function (s) { // convert string to array of longs, each containing 4 chars
+                // note chars must be within ISO-8859-1 (with Unicode code-point < 256) to fit 4/long
+                var l = new Array(Math.ceil(s.length / 4));
+                for (var i = 0; i < l.length; i++) {
+                    // note little-endian encoding - endianness is irrelevant as long as 
+                    // it is the same in longsToStr() 
+                    l[i] = s.charCodeAt(i * 4) + (s.charCodeAt(i * 4 + 1) << 8) + (s.charCodeAt(i * 4 + 2) << 16) + (s.charCodeAt(i * 4 + 3) << 24);
+                }
+                return l; // note running off the end of the string generates nulls since 
+            } // bitwise operators treat NaN as 0
+            this.longsToStr = function (l) { // convert array of longs back to string
+                var a = new Array(l.length);
+                for (var i = 0; i < l.length; i++) {
+                    a[i] = String.fromCharCode(l[i] & 0xFF, l[i] >>> 8 & 0xFF, l[i] >>> 16 & 0xFF, l[i] >>> 24 & 0xFF);
+                }
+                return a.join(''); // use Array.join() rather than repeated string appends for efficiency in IE
+            }
+        }
+
+        var Base64 = new function () // Base64 namespace
+        {
+            this.code = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+
+            /**
+             * Encode string into Base64, as defined by RFC 4648 [http://tools.ietf.org/html/rfc4648]
+             * (instance method extending String object). As per RFC 4648, no newlines are added.
+             *
+             * @param {String} str The string to be encoded as base-64
+             * @param {Boolean} [utf8encode=false] Flag to indicate whether str is Unicode string to be encoded 
+             *   to UTF8 before conversion to base64; otherwise string is assumed to be 8-bit characters
+             * @returns {String} Base64-encoded string
+             */
+            this.encode = function (str, utf8encode) { // http://tools.ietf.org/html/rfc4648
+                utf8encode = (typeof utf8encode == 'undefined') ? false : utf8encode;
+                var o1, o2, o3, bits, h1, h2, h3, h4, e = [],
+                    pad = '',
+                    c, plain, coded;
+                var b64 = Base64.code;
+
+                plain = utf8encode ? Utf8.encode(str) : str;
+
+                c = plain.length % 3; // pad string to length of multiple of 3
+                if (c > 0) {
+                    while (c++ < 3) {
+                        pad += '=';
+                        plain += '\0';
+                    }
+                }
+                // note: doing padding here saves us doing special-case packing for trailing 1 or 2 chars
+                for (c = 0; c < plain.length; c += 3) { // pack three octets into four hexets
+                    o1 = plain.charCodeAt(c);
+                    o2 = plain.charCodeAt(c + 1);
+                    o3 = plain.charCodeAt(c + 2);
+
+                    bits = o1 << 16 | o2 << 8 | o3;
+
+                    h1 = bits >> 18 & 0x3f;
+                    h2 = bits >> 12 & 0x3f;
+                    h3 = bits >> 6 & 0x3f;
+                    h4 = bits & 0x3f;
+
+                    // use hextets to index into code string
+                    e[c / 3] = b64.charAt(h1) + b64.charAt(h2) + b64.charAt(h3) + b64.charAt(h4);
+                }
+                coded = e.join(''); // join() is far faster than repeated string concatenation in IE
+                // replace 'A's from padded nulls with '='s
+                coded = coded.slice(0, coded.length - pad.length) + pad;
+
+                return coded;
+            }
+
+            /**
+             * Decode string from Base64, as defined by RFC 4648 [http://tools.ietf.org/html/rfc4648]
+             * (instance method extending String object). As per RFC 4648, newlines are not catered for.
+             *
+             * @param {String} str The string to be decoded from base-64
+             * @param {Boolean} [utf8decode=false] Flag to indicate whether str is Unicode string to be decoded 
+             *   from UTF8 after conversion from base64
+             * @returns {String} decoded string
+             */
+            this.decode = function (str, utf8decode) {
+                utf8decode = (typeof utf8decode == 'undefined') ? false : utf8decode;
+                var o1, o2, o3, h1, h2, h3, h4, bits, d = [],
+                    plain, coded;
+                var b64 = Base64.code;
+
+                coded = utf8decode ? Utf8.decode(str) : str;
+
+
+                for (var c = 0; c < coded.length; c += 4) { // unpack four hexets into three octets
+                    h1 = b64.indexOf(coded.charAt(c));
+                    h2 = b64.indexOf(coded.charAt(c + 1));
+                    h3 = b64.indexOf(coded.charAt(c + 2));
+                    h4 = b64.indexOf(coded.charAt(c + 3));
+
+                    bits = h1 << 18 | h2 << 12 | h3 << 6 | h4;
+
+                    o1 = bits >>> 16 & 0xff;
+                    o2 = bits >>> 8 & 0xff;
+                    o3 = bits & 0xff;
+
+                    d[c / 4] = String.fromCharCode(o1, o2, o3);
+                    // check for padding
+                    if (h4 == 0x40) d[c / 4] = String.fromCharCode(o1, o2);
+                    if (h3 == 0x40) d[c / 4] = String.fromCharCode(o1);
+                }
+                plain = d.join(''); // join() is far faster than repeated string concatenation in IE
+                return utf8decode ? Utf8.decode(plain) : plain;
+            }
+        }
+
+        var Utf8 = new function () // Utf8 namespace
+        {
+            /**
+             * Encode multi-byte Unicode string into utf-8 multiple single-byte characters 
+             * (BMP / basic multilingual plane only)
+             *
+             * Chars in range U+0080 - U+07FF are encoded in 2 chars, U+0800 - U+FFFF in 3 chars
+             *
+             * @param {String} strUni Unicode string to be encoded as UTF-8
+             * @returns {String} encoded string
+             */
+            this.encode = function (strUni) {
+                // use regular expressions & String.replace callback function for better efficiency 
+                // than procedural approaches
+                var strUtf = strUni.replace(/[\u0080-\u07ff]/g, // U+0080 - U+07FF => 2 bytes 110yyyyy, 10zzzzzz
+
+
+                function (c) {
+                    var cc = c.charCodeAt(0);
+                    return String.fromCharCode(0xc0 | cc >> 6, 0x80 | cc & 0x3f);
+                });
+                strUtf = strUtf.replace(/[\u0800-\uffff]/g, // U+0800 - U+FFFF => 3 bytes 1110xxxx, 10yyyyyy, 10zzzzzz
+
+
+                function (c) {
+                    var cc = c.charCodeAt(0);
+                    return String.fromCharCode(0xe0 | cc >> 12, 0x80 | cc >> 6 & 0x3F, 0x80 | cc & 0x3f);
+                });
+                return strUtf;
+            }
+
+            /**
+             * Decode utf-8 encoded string back into multi-byte Unicode characters
+             *
+             * @param {String} strUtf UTF-8 string to be decoded back to Unicode
+             * @returns {String} decoded string
+             */
+            this.decode = function (strUtf) {
+                // note: decode 3-byte chars first as decoded 2-byte strings could appear to be 3-byte char!
+                var strUni = strUtf.replace(/[\u00e0-\u00ef][\u0080-\u00bf][\u0080-\u00bf]/g, // 3-byte chars
+
+
+                function (c) { // (note parentheses for precence)
+                    var cc = ((c.charCodeAt(0) & 0x0f) << 12) | ((c.charCodeAt(1) & 0x3f) << 6) | (c.charCodeAt(2) & 0x3f);
+                    return String.fromCharCode(cc);
+                });
+                strUni = strUni.replace(/[\u00c0-\u00df][\u0080-\u00bf]/g, // 2-byte chars
+
+
+                function (c) { // (note parentheses for precence)
+                    var cc = (c.charCodeAt(0) & 0x1f) << 6 | c.charCodeAt(1) & 0x3f;
+                    return String.fromCharCode(cc);
+                });
+                return strUni;
+            }
+        }
+    </script>
+</body>
+</html>
